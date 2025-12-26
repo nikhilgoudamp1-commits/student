@@ -1,36 +1,32 @@
-# Student Grade Evaluation Program
+def calculate_grade(avg):
+    if 90 <= avg <= 100:
+        return "S"
+    elif 80 <= avg <= 89:
+        return "A"
+    elif 65 <= avg <= 79:
+        return "B"
+    elif 50 <= avg <= 64:
+        return "C"
+    elif 40 <= avg <= 49:
+        return "D"
+    else:
+        return "F"
 
-# Input student details
-name = input("Enter student name: ")
-department = input("Enter department: ")
-semester = input("Enter semester: ")
 
-# Input marks
-m1 = float(input("Enter marks for Subject 1: "))
-m2 = float(input("Enter marks for Subject 2: "))
-m3 = float(input("Enter marks for Subject 3: "))
+def main():
+    name = input("Enter Name: ")
+    dept = input("Enter Department: ")
+    sem = input("Enter Semester: ")
 
-# Calculate average
-average = (m1 + m2 + m3) / 3
+    m1 = int(input("Enter marks 1: "))
+    m2 = int(input("Enter marks 2: "))
+    m3 = int(input("Enter marks 3: "))
 
-# Assign grade
-if 90 <= average <= 100:
-    grade = "S"
-elif 80 <= average < 90:
-    grade = "A"
-elif 65 <= average < 80:
-    grade = "B"
-elif 50 <= average < 65:
-    grade = "C"
-elif 40 <= average < 50:
-    grade = "D"
-else:
-    grade = "F"
+    avg = (m1 + m2 + m3) / 3
+    grade = calculate_grade(avg)
 
-# Display result
-print("\n--- Student Result ---")
-print("Name:", name)
-print("Department:", department)
-print("Semester:", semester)
-print("Average Marks:", average)
-print("Grade:", grade)
+    print("Grade:", grade)
+
+
+if _name_ == "_main_":
+    main()
