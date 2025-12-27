@@ -1,11 +1,8 @@
-# Use Python base image
-FROM python:3.11-slim
+FROM python:3.13-slim
 
-# Set working directory
 WORKDIR /app
+COPY . .
 
-# Copy all project files
-COPY . /app
+RUN pip install pytest
 
-# Default command to run your script
-CMD ["python", "student.py"]
+CMD sh -c "python student.py && pytest -v"
