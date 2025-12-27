@@ -1,31 +1,50 @@
+def display_grade_table():
+    print("\n--- Grade Criteria ---")
+    print("90 - 100 : Grade S")
+    print("80 - 89  : Grade A")
+    print("65 - 79  : Grade B")
+    print("50 - 64  : Grade C")
+    print("40 - 49  : Grade D")
+    print("Below 40 : Grade F")
+    print("----------------------")
+
+
 def calculate_grade(avg):
     if 90 <= avg <= 100:
         return "S"
-    elif 80 <= avg <= 89:
+    elif 80 <= avg < 90:
         return "A"
-    elif 65 <= avg <= 79:
+    elif 65 <= avg < 80:
         return "B"
-    elif 50 <= avg <= 64:
+    elif 50 <= avg < 65:
         return "C"
-    elif 40 <= avg <= 49:
+    elif 40 <= avg < 50:
         return "D"
     else:
         return "F"
 
 
-def main():
-    name = input("Enter Name: ")
-    dept = input("Enter Department: ")
-    sem = input("Enter Semester: ")
+def main(
+    name="NIKHIL",
+    dept="BCA",
+    sem="3",
+    m1=85,
+    m2=90,
+    m3=95
+):
+    print("\n--- Student Details ---")
+    print("Name:", name)
+    print("Department:", dept)
+    print("Semester:", sem)
 
-    m1 = int(input("Enter marks 1: "))
-    m2 = int(input("Enter marks 2: "))
-    m3 = int(input("Enter marks 3: "))
+    display_grade_table()
 
     avg = (m1 + m2 + m3) / 3
-    grade = calculate_grade(avg)
 
-    print("Grade:", grade)
+    print("\nAverage Marks:", avg)
+
+    grade = calculate_grade(avg)
+    print("Final Grade:", grade)
 
 
 if __name__ == "__main__":
